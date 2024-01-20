@@ -70,7 +70,7 @@ public class GameOfLife {
 		String currentLine ="";
 		for (int i = 0;i < board.length ;i++ ) {
 			for (int j = 0;j < board[0].length ;j++ ) {
-				if (i == 0 || i == board[0].length -1 || j == 0 || j == board[0].length -1 || currentLine == null) {
+				if (i == 0 || i == board[0].length -1 || j == 0 || j == board[1].length -1 || currentLine == null) {
 					board[i][j] = 0;
 				}
 				else{
@@ -94,9 +94,10 @@ public class GameOfLife {
 					}
 				
 			}
-			currentLine = in.readLine();
+			
 			
 		}
+		currentLine = in.readLine();
 		
 }
 return board;
