@@ -114,22 +114,20 @@ public class GameOfLife {
 	// cell in the new board. Returns the new board.
 	public static int[][] evolve(int[][] board) {
 		int [][] evolved = new int [board.length][board[0].length];
-		for (int i = 0;i < evolved.length ;i++ )
-	    {
-	    	for (int j = 0;j < evolved[0].length ;j++ ) 
-	    	{
-	    		if (i == 0 || i == board.length - 1 || j == 0 || j == board[0].length -1) 
-	    		{
-	    			board[i][j] = 0;
-	    		}
-	    		else
-	    		{
-	    			evolved[i][j] = cellValue(board,i,j);
-	    		}
-	    	}
-						
+		for (int i = 0; i < evolved.length; i++)
+		{
+			for (int j = 0; j < evolved[0].length; j++)
+			{
+				if (i == 0 || i == board.length - 1 || j == 0 || j == board[1].length - 1)
+				{
+					board[i][j] = 0;
+				}
+				else
+				{
+					evolved[i][j] = cellValue(board, i, j);
+				}
+			}
 		}
-		
 		return evolved;
 	}
 
@@ -143,16 +141,21 @@ public class GameOfLife {
 	// Assumes that j is at least 1 and at most the number of columns in the board - 1. 
 	// Uses the count(board,i,j) function to count the number of alive neighbors.
 	public static int cellValue(int[][] board, int i, int j) {
-		int count = count(board,i,j);
-		if (board[i][j] == 1)
+		int count = count(board, i, j);
+
+		if (board[i][j] == 1) 
 		{
-			if (count < 2 || count > 3) 
+			if (count < 2 || count > 3)
 			{
-			return 0;	
+				// next time this cell is dead
+				return 0;
 			}
+
+
 			return 1;
 		}
-		if ( count == 3)
+
+		if (count == 3)
 		{
 			return 1;
 		}
