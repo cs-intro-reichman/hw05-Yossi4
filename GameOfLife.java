@@ -159,6 +159,7 @@ public class GameOfLife {
 
 		return board[i][j];
 	}
+	//test
 	
 	// Counts and returns the number of living neighbors of the given cell
 	// (The cell itself is not counted).
