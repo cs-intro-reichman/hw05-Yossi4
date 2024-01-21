@@ -173,7 +173,7 @@ public class GameOfLife {
 		int counter = 0;
 		for (int r = i - 1;r <= i+1 ;r++ ) 
 		{
-			for (int c = j - 1; c <= j - 1 ;c++ ) 
+			for (int c = j - 1; c <= j + 1 ;c++ ) 
 			{
 				counter += board[r][c];	
 			}
